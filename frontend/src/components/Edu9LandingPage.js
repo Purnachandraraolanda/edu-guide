@@ -164,30 +164,70 @@ const Edu9LandingPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-sm text-[#0074D9] font-semibold mb-2 uppercase">Our Services</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">We Handle the Hard Part</h3>
-            <p className="text-xl text-gray-600">Focus on your dream while we take care of the complexities</p>
+            <h3 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">Bangalore Engineering Admissions Made Easy</h3>
+            <p className="text-xl text-gray-600">Expert guidance for COMEDK, KCET, and Management quota admissions</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: BookOpen, title: 'COMEDK Registration', desc: 'Seamless assistance with COMEDK portal registration and documentation for aspiring engineers.' },
-              { icon: CheckCircle, title: 'KCET Counseling', desc: 'Complete guidance for KCET counseling process and seat allocation procedures.' },
-              { icon: Award, title: 'Document Verification', desc: 'End-to-end support for educational document verification required by colleges.' },
-              { icon: Users, title: 'Admission Guidance', desc: 'Expert help in securing admission to your dream engineering college.' }
-            ].map((service, idx) => (
-              <Card key={idx} className="border-2 hover:border-[#0074D9] hover:shadow-xl transition-all cursor-pointer group">
-                <CardHeader>
-                  <div className="h-14 w-14 bg-[#0074D9] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <service.icon className="h-7 w-7 text-white" />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">{service.desc}</p>
-                  <Button variant="link" className="text-[#0074D9] p-0">Learn more →</Button>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="border-2 hover:border-[#0074D9] hover:shadow-xl transition-all cursor-pointer group">
+              <CardHeader>
+                <div className="h-14 w-14 bg-[#0074D9] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <BookOpen className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">COMEDK Counselling</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Complete assistance with COMEDK counselling process, seat allocation, and document verification for Bangalore colleges.
+                </p>
+                <Button variant="link" className="text-[#0074D9] p-0">Learn more →</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:border-[#0074D9] hover:shadow-xl transition-all cursor-pointer group">
+              <CardHeader>
+                <div className="h-14 w-14 bg-[#0074D9] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <CheckCircle className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">KCET Counselling</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Expert guidance for KCET counselling, choice filling, and seat allotment in top Bangalore engineering colleges.
+                </p>
+                <Button variant="link" className="text-[#0074D9] p-0">Learn more →</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:border-[#0074D9] hover:shadow-xl transition-all cursor-pointer group">
+              <CardHeader>
+                <div className="h-14 w-14 bg-[#0074D9] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Award className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">Management Admissions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Direct admission support through management quota in premier Bangalore engineering institutions with complete transparency.
+                </p>
+                <Button variant="link" className="text-[#0074D9] p-0">Learn more →</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:border-[#0074D9] hover:shadow-xl transition-all cursor-pointer group">
+              <CardHeader>
+                <div className="h-14 w-14 bg-[#0074D9] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Users className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">Admission Guidance</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Comprehensive career counseling and admission strategy for securing seats in top Bangalore engineering colleges.
+                </p>
+                <Button variant="link" className="text-[#0074D9] p-0">Learn more →</Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

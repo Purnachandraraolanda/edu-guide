@@ -88,6 +88,14 @@ const CollegeDetail = () => {
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4 py-8">
+          <div className="flex items-center gap-3 mb-4">
+            <img 
+              src="/edu9-logo.jpg" 
+              alt="edu9 Career Guidance" 
+              className="h-12 w-12 rounded-full border-2 border-white"
+            />
+            <span className="text-lg font-semibold">edu9 Career Guidance</span>
+          </div>
           <Button
             variant="ghost"
             className="text-white hover:bg-white/10 mb-4"

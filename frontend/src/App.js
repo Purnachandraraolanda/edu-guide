@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "@/App.css";
 import axios from "axios";
 import { Plus, Pencil, Trash2, Search, Building2, MapPin, IndianRupee } from "lucide-react";

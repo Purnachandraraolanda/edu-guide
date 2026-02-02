@@ -93,7 +93,7 @@ const LandingPage = ({ onNavigateToDashboard }) => {
             <div className="flex justify-center mb-6">
               <img 
                 src="/edu9-logo.jpg" 
-                alt="edu9 Career Guidance" 
+                alt="Edu9 Career Guidance" 
                 className="h-20 w-20 rounded-full border-4 border-white shadow-lg"
               />
             </div>
@@ -378,7 +378,7 @@ const LandingPage = ({ onNavigateToDashboard }) => {
           <div className="flex items-center justify-center mb-4">
             <img 
               src="/edu9-logo.jpg" 
-              alt="edu9 Career Guidance" 
+              alt="Edu9 Career Guidance" 
               className="h-12 w-12 rounded-full mr-3"
             />
             <div className="text-left">

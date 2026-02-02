@@ -91,10 +91,10 @@ const CollegeDetail = () => {
           <div className="flex items-center gap-3 mb-4">
             <img 
               src="/edu9-logo.jpg" 
-              alt="edu9 Career Guidance" 
+              alt="Edu9 Career Guidance" 
               className="h-12 w-12 rounded-full border-2 border-white"
             />
-            <span className="text-lg font-semibold">edu9 Career Guidance</span>
+            <span className="text-lg font-semibold">Edu9 Career Guidance</span>
           </div>
           <Button
             variant="ghost"

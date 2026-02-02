@@ -244,7 +244,7 @@ const Dashboard = ({ onNavigateToLanding }) => {
             <div className="flex items-center gap-4">
               <img 
                 src="/edu9-logo.jpg" 
-                alt="edu9 Career Guidance" 
+                alt="Edu9 Career Guidance" 
                 className="h-16 w-16 rounded-full border-2 border-blue-600"
               />
               <div>

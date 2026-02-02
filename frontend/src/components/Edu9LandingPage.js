@@ -96,7 +96,7 @@ const Edu9LandingPage = () => {
               alt="edu9 Career Guidance" 
               className="h-12 w-12 rounded-full"
             />
-            <span className="text-xl font-bold">edu9 Career Guidance</span>
+            <span className="text-xl font-bold">Edu9 Career Guidance</span>
           </div>
           <div className="hidden md:flex items-center gap-6">
             <a href="#home" className="hover:text-[#0074D9] transition-colors">Home</a>

@@ -188,14 +188,24 @@ async def get_college(college_id: str):
 @api_router.get("/colleges/slug/{slug}", response_model=College)
 async def get_college_by_slug(slug: str):
     """Get a specific college by slug (URL-friendly name)"""
-    # Convert slug back to name (replace hyphens with spaces and title case)
-    name_pattern = slug.replace('-', ' ')
-    
-    # Try to find college by matching name (case-insensitive)
+    # Try exact match first
     college = await db.colleges.find_one(
-        {"name": {"$regex": f"^{name_pattern}$", "$options": "i"}},
+        {"name": {"$regex": f"^{slug.replace('-', ' ')}$", "$options": "i"}},
         {"_id": 0}
     )
+    
+    # If not found, try partial match
+    if not college:
+        # Split slug and try to match any part
+        slug_parts = slug.split('-')
+        for i in range(len(slug_parts), 0, -1):
+            partial_name = ' '.join(slug_parts[:i])
+            college = await db.colleges.find_one(
+                {"name": {"$regex": partial_name, "$options": "i"}},
+                {"_id": 0}
+            )
+            if college:
+                break
     
     if not college:
         raise HTTPException(status_code=404, detail="College not found")

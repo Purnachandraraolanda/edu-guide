@@ -93,7 +93,7 @@ const Edu9LandingPage = () => {
           <div className="flex items-center gap-3">
             <img 
               src="/edu9-logo.jpg" 
-              alt="edu9 Career Guidance" 
+              alt="Edu9 Career Guidance" 
               className="h-12 w-12 rounded-full"
             />
             <span className="text-xl font-bold">Edu9 Career Guidance</span>
@@ -119,7 +119,7 @@ const Edu9LandingPage = () => {
           <div className="max-w-5xl mx-auto text-center">
             <img 
               src="/edu9-logo.jpg" 
-              alt="edu9 Career Guidance" 
+              alt="Edu9 Career Guidance" 
               className="h-24 w-24 rounded-full mx-auto mb-6 border-4 border-white shadow-2xl"
             />
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -321,11 +321,11 @@ const Edu9LandingPage = () => {
             <div className="flex items-center gap-4 mb-8">
               <img 
                 src="/edu9-logo.jpg" 
-                alt="edu9 Career Guidance" 
+                alt="Edu9 Career Guidance" 
                 className="h-16 w-16 rounded-full"
               />
               <div>
-                <h3 className="text-3xl font-bold text-[#001F3F]">edu9 Career Guidance</h3>
+                <h3 className="text-3xl font-bold text-[#001F3F]">Edu9 Career Guidance</h3>
                 <p className="text-gray-600">346K subscribers</p>
               </div>
             </div>
@@ -429,11 +429,11 @@ const Edu9LandingPage = () => {
             <div className="flex items-center gap-4">
               <img 
                 src="/edu9-logo.jpg" 
-                alt="edu9 Career Guidance" 
+                alt="Edu9 Career Guidance" 
                 className="h-16 w-16 rounded-full"
               />
               <div>
-                <h3 className="text-2xl font-bold">edu9 Career Guidance</h3>
+                <h3 className="text-2xl font-bold">Edu9 Career Guidance</h3>
                 <p className="text-blue-200">Engineering College Admissions Portal</p>
               </div>
             </div>
@@ -442,7 +442,7 @@ const Edu9LandingPage = () => {
                 Helping students make informed decisions about their engineering education
               </p>
               <p className="text-sm text-blue-300">
-                © 2026 edu9 Career Guidance. All rights reserved.
+                © 2026 Edu9 Career Guidance. All rights reserved.
               </p>
             </div>
           </div>

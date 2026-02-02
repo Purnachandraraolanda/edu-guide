@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -6,7 +6,7 @@ import os
 import logging
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
@@ -37,7 +37,45 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
-# Add your routes to the router instead of directly to app
+
+# College Models
+class CollegeCreate(BaseModel):
+    name: str
+    location: str
+    comedk_fees: float
+    kcet_fees: float
+    branches: List[str]
+    admission_type: str  # Government/Private/Aided
+    established_year: Optional[int] = None
+    affiliation: Optional[str] = None
+
+class College(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    location: str
+    comedk_fees: float
+    kcet_fees: float
+    branches: List[str]
+    admission_type: str
+    established_year: Optional[int] = None
+    affiliation: Optional[str] = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class CollegeUpdate(BaseModel):
+    name: Optional[str] = None
+    location: Optional[str] = None
+    comedk_fees: Optional[float] = None
+    kcet_fees: Optional[float] = None
+    branches: Optional[List[str]] = None
+    admission_type: Optional[str] = None
+    established_year: Optional[int] = None
+    affiliation: Optional[str] = None
+
+
+# Existing routes
 @api_router.get("/")
 async def root():
     return {"message": "Hello World"}
@@ -65,6 +103,93 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+
+# College Routes
+@api_router.post("/colleges", response_model=College)
+async def create_college(college_input: CollegeCreate):
+    """Create a new engineering college with COMEDK and KCET fees"""
+    college_dict = college_input.model_dump()
+    college_obj = College(**college_dict)
+    
+    # Convert to dict and serialize datetime to ISO string for MongoDB
+    doc = college_obj.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    doc['updated_at'] = doc['updated_at'].isoformat()
+    
+    await db.colleges.insert_one(doc)
+    return college_obj
+
+@api_router.get("/colleges", response_model=List[College])
+async def get_colleges():
+    """Get all engineering colleges with their fees"""
+    colleges = await db.colleges.find({}, {"_id": 0}).to_list(1000)
+    
+    # Convert ISO string timestamps back to datetime objects
+    for college in colleges:
+        if isinstance(college.get('created_at'), str):
+            college['created_at'] = datetime.fromisoformat(college['created_at'])
+        if isinstance(college.get('updated_at'), str):
+            college['updated_at'] = datetime.fromisoformat(college['updated_at'])
+    
+    return colleges
+
+@api_router.get("/colleges/{college_id}", response_model=College)
+async def get_college(college_id: str):
+    """Get a specific college by ID"""
+    college = await db.colleges.find_one({"id": college_id}, {"_id": 0})
+    
+    if not college:
+        raise HTTPException(status_code=404, detail="College not found")
+    
+    # Convert ISO string timestamps back to datetime objects
+    if isinstance(college.get('created_at'), str):
+        college['created_at'] = datetime.fromisoformat(college['created_at'])
+    if isinstance(college.get('updated_at'), str):
+        college['updated_at'] = datetime.fromisoformat(college['updated_at'])
+    
+    return college
+
+@api_router.put("/colleges/{college_id}", response_model=College)
+async def update_college(college_id: str, college_update: CollegeUpdate):
+    """Update college information"""
+    # Get existing college
+    existing_college = await db.colleges.find_one({"id": college_id}, {"_id": 0})
+    
+    if not existing_college:
+        raise HTTPException(status_code=404, detail="College not found")
+    
+    # Update only provided fields
+    update_data = college_update.model_dump(exclude_unset=True)
+    
+    if update_data:
+        update_data['updated_at'] = datetime.now(timezone.utc).isoformat()
+        await db.colleges.update_one(
+            {"id": college_id},
+            {"$set": update_data}
+        )
+    
+    # Fetch updated college
+    updated_college = await db.colleges.find_one({"id": college_id}, {"_id": 0})
+    
+    # Convert ISO string timestamps back to datetime objects
+    if isinstance(updated_college.get('created_at'), str):
+        updated_college['created_at'] = datetime.fromisoformat(updated_college['created_at'])
+    if isinstance(updated_college.get('updated_at'), str):
+        updated_college['updated_at'] = datetime.fromisoformat(updated_college['updated_at'])
+    
+    return updated_college
+
+@api_router.delete("/colleges/{college_id}")
+async def delete_college(college_id: str):
+    """Delete a college"""
+    result = await db.colleges.delete_one({"id": college_id})
+    
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="College not found")
+    
+    return {"message": "College deleted successfully", "id": college_id}
+
 
 # Include the router in the main app
 app.include_router(api_router)

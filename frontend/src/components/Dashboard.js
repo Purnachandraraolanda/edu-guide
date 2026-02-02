@@ -47,6 +47,7 @@ const BRANCHES = [
 const ADMISSION_TYPES = ["Government", "Private", "Aided"];
 
 const Dashboard = ({ onNavigateToLanding }) => {
+  const navigate = useNavigate();
   const [colleges, setColleges] = useState([]);
   const [filteredColleges, setFilteredColleges] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");

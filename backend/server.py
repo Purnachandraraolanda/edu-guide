@@ -77,6 +77,9 @@ class College(BaseModel):
     location: str
     comedk_fees: float
     kcet_fees: float
+    jee_fees: Optional[float] = 0
+    management_fees: Optional[float] = 0
+    donation: Optional[float] = 0
     branches: List[str]
     admission_type: str
     established_year: Optional[int] = None

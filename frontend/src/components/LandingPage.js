@@ -355,7 +355,7 @@ const LandingPage = ({ onNavigateToDashboard }) => {
           <Button
             size="lg"
             className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6"
-            onClick={onNavigateToDashboard}
+            onClick={() => navigate("/dashboard")}
             data-testid="cta-dashboard-btn"
           >
             Go to Full Dashboard

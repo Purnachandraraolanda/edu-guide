@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "@/App.css";
-import LandingPage from "@/components/LandingPage";
+import Edu9LandingPage from "@/components/Edu9LandingPage";
 import Dashboard from "@/components/Dashboard";
 import CollegeDetail from "@/components/CollegeDetail";
 import { Toaster } from "@/components/ui/toaster";
@@ -17,7 +17,7 @@ function App() {
           {/* Landing Page */}
           <Route 
             path="/" 
-            element={<LandingPage onNavigateToDashboard={() => setCurrentView("dashboard")} />} 
+            element={<Edu9LandingPage onNavigateToDashboard={() => setCurrentView("dashboard")} />} 
           />
           
           {/* Dashboard */}

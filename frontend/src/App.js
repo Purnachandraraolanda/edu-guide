@@ -67,15 +67,7 @@ function App() {
     affiliation: "",
   });
 
-  useEffect(() => {
-    fetchColleges();
-  }, []);
-
-  useEffect(() => {
-    filterColleges();
-  }, [searchQuery, colleges]);
-
-  const fetchColleges = async () => {
+  const fetchColleges = useCallback(async () => {
     try {
       setLoading(true);
       const response = await axios.get(`${API}/colleges`);
@@ -91,9 +83,9 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [toast]);
 
-  const filterColleges = () => {
+  const filterColleges = useCallback(() => {
     if (!searchQuery.trim()) {
       setFilteredColleges(colleges);
       return;
@@ -107,7 +99,15 @@ function App() {
         college.admission_type.toLowerCase().includes(query)
     );
     setFilteredColleges(filtered);
-  };
+  }, [searchQuery, colleges]);
+
+  useEffect(() => {
+    fetchColleges();
+  }, [fetchColleges]);
+
+  useEffect(() => {
+    filterColleges();
+  }, [filterColleges]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

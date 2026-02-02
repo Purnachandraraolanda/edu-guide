@@ -39,6 +39,14 @@ class StatusCheckCreate(BaseModel):
 
 
 # College Models
+class AdmissionQuotas(BaseModel):
+    jee_main: Optional[int] = None
+    comedk: Optional[int] = None
+    kcet: Optional[int] = None
+    comed_k: Optional[int] = None
+    management: Optional[int] = None
+    nri: Optional[int] = None
+
 class CollegeCreate(BaseModel):
     name: str
     location: str
@@ -48,6 +56,15 @@ class CollegeCreate(BaseModel):
     admission_type: str  # Government/Private/Aided
     established_year: Optional[int] = None
     affiliation: Optional[str] = None
+    description: Optional[str] = None
+    nirf_ranking: Optional[int] = None
+    other_rankings: Optional[dict] = None
+    admission_quotas: Optional[dict] = None
+    total_seats: Optional[int] = None
+    campus_area: Optional[str] = None
+    placements: Optional[dict] = None
+    facilities: Optional[List[str]] = None
+    website: Optional[str] = None
 
 class College(BaseModel):
     model_config = ConfigDict(extra="ignore")
@@ -61,6 +78,15 @@ class College(BaseModel):
     admission_type: str
     established_year: Optional[int] = None
     affiliation: Optional[str] = None
+    description: Optional[str] = None
+    nirf_ranking: Optional[int] = None
+    other_rankings: Optional[dict] = None
+    admission_quotas: Optional[dict] = None
+    total_seats: Optional[int] = None
+    campus_area: Optional[str] = None
+    placements: Optional[dict] = None
+    facilities: Optional[List[str]] = None
+    website: Optional[str] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
@@ -73,6 +99,15 @@ class CollegeUpdate(BaseModel):
     admission_type: Optional[str] = None
     established_year: Optional[int] = None
     affiliation: Optional[str] = None
+    description: Optional[str] = None
+    nirf_ranking: Optional[int] = None
+    other_rankings: Optional[dict] = None
+    admission_quotas: Optional[dict] = None
+    total_seats: Optional[int] = None
+    campus_area: Optional[str] = None
+    placements: Optional[dict] = None
+    facilities: Optional[List[str]] = None
+    website: Optional[str] = None
 
 
 # Existing routes

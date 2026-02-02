@@ -250,7 +250,7 @@ const Dashboard = ({ onNavigateToLanding }) => {
             </div>
             <div className="flex gap-3">
               <Button
-                onClick={onNavigateToLanding}
+                onClick={() => navigate("/")}
                 variant="outline"
                 data-testid="back-to-landing-btn"
               >

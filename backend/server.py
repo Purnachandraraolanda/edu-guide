@@ -101,6 +101,9 @@ class CollegeUpdate(BaseModel):
     location: Optional[str] = None
     comedk_fees: Optional[float] = None
     kcet_fees: Optional[float] = None
+    jee_fees: Optional[float] = None
+    management_fees: Optional[float] = None
+    donation: Optional[float] = None
     branches: Optional[List[str]] = None
     admission_type: Optional[str] = None
     established_year: Optional[int] = None

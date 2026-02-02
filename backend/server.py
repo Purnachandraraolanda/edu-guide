@@ -185,6 +185,29 @@ async def get_college(college_id: str):
     
     return college
 
+@api_router.get("/colleges/slug/{slug}", response_model=College)
+async def get_college_by_slug(slug: str):
+    """Get a specific college by slug (URL-friendly name)"""
+    # Convert slug back to name (replace hyphens with spaces and title case)
+    name_pattern = slug.replace('-', ' ')
+    
+    # Try to find college by matching name (case-insensitive)
+    college = await db.colleges.find_one(
+        {"name": {"$regex": f"^{name_pattern}$", "$options": "i"}},
+        {"_id": 0}
+    )
+    
+    if not college:
+        raise HTTPException(status_code=404, detail="College not found")
+    
+    # Convert ISO string timestamps back to datetime objects
+    if isinstance(college.get('created_at'), str):
+        college['created_at'] = datetime.fromisoformat(college['created_at'])
+    if isinstance(college.get('updated_at'), str):
+        college['updated_at'] = datetime.fromisoformat(college['updated_at'])
+    
+    return college
+
 @api_router.put("/colleges/{college_id}", response_model=College)
 async def update_college(college_id: str, college_update: CollegeUpdate):
     """Update college information"""

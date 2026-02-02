@@ -12,10 +12,20 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const LandingPage = ({ onNavigateToDashboard }) => {
+  const navigate = useNavigate();
   const [colleges, setColleges] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredColleges, setFilteredColleges] = useState([]);
   const [selectedType, setSelectedType] = useState("all");
+
+  const createSlug = (name) => {
+    return name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+  };
+
+  const handleCollegeClick = (college) => {
+    const slug = createSlug(college.name);
+    navigate(`/college/${slug}`);
+  };
 
   useEffect(() => {
     fetchColleges();

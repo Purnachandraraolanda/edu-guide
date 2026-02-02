@@ -358,7 +358,7 @@ const CollegeDetail = () => {
                   Fee Structure (2026-27)
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3">
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <p className="text-sm text-gray-600 mb-1">COMEDK Fees</p>
                   <p className="text-2xl font-bold text-blue-600">
@@ -373,6 +373,33 @@ const CollegeDetail = () => {
                   </p>
                   <p className="text-xs text-gray-500 mt-1">per year</p>
                 </div>
+                {college.jee_fees > 0 && (
+                  <div className="bg-indigo-50 p-4 rounded-lg">
+                    <p className="text-sm text-gray-600 mb-1">JEE Main Fees</p>
+                    <p className="text-2xl font-bold text-indigo-600">
+                      {formatCurrency(college.jee_fees)}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">per year</p>
+                  </div>
+                )}
+                {college.management_fees > 0 && (
+                  <div className="bg-orange-50 p-4 rounded-lg">
+                    <p className="text-sm text-gray-600 mb-1">Management Quota Fees</p>
+                    <p className="text-2xl font-bold text-orange-600">
+                      {formatCurrency(college.management_fees)}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">per year</p>
+                  </div>
+                )}
+                {college.donation > 0 && (
+                  <div className="bg-red-50 p-4 rounded-lg border-2 border-red-200">
+                    <p className="text-sm text-gray-600 mb-1">Donation</p>
+                    <p className="text-2xl font-bold text-red-600">
+                      {formatCurrency(college.donation)}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">one-time payment</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
 

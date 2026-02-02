@@ -283,10 +283,18 @@ const LandingPage = ({ onNavigateToDashboard }) => {
                         </Badge>
                       )}
                     </div>
-                    <CardTitle className="text-xl mb-2">{college.name}</CardTitle>
+                    <CardTitle className="text-xl mb-2 group-hover:text-blue-600 transition-colors">
+                      {college.name}
+                    </CardTitle>
                     <div className="flex items-center text-gray-600 text-sm">
                       <MapPin className="h-4 w-4 mr-1" />
                       {college.location}
+                    </div>
+                    <div className="flex items-center gap-2 mt-2">
+                      <ExternalLink className="h-4 w-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span className="text-sm text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                        View Details
+                      </span>
                     </div>
                   </CardHeader>
                   <CardContent>

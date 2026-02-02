@@ -89,6 +89,14 @@ const LandingPage = ({ onNavigateToDashboard }) => {
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center">
+            {/* Company Logo */}
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/edu9-logo.jpg" 
+                alt="edu9 Career Guidance" 
+                className="h-20 w-20 rounded-full border-4 border-white shadow-lg"
+              />
+            </div>
             <Badge className="mb-4 bg-white/20 text-white border-white/30" data-testid="hero-badge">
               <Star className="h-3 w-3 mr-1" />
               Top 10+ Bangalore Engineering Colleges

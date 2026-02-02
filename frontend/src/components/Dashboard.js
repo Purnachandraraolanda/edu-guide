@@ -241,12 +241,18 @@ const Dashboard = ({ onNavigateToLanding }) => {
       <div className="bg-white border-b shadow-sm">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-2">
-                <Building2 className="h-8 w-8 text-blue-600" />
-                College Management Dashboard
-              </h1>
-              <p className="text-gray-600 mt-1">Manage COMEDK & KCET Fee Information</p>
+            <div className="flex items-center gap-4">
+              <img 
+                src="/edu9-logo.jpg" 
+                alt="edu9 Career Guidance" 
+                className="h-16 w-16 rounded-full border-2 border-blue-600"
+              />
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900 flex items-center gap-2">
+                  College Management Dashboard
+                </h1>
+                <p className="text-gray-600 mt-1">Manage COMEDK & KCET Fee Information</p>
+              </div>
             </div>
             <div className="flex gap-3">
               <Button

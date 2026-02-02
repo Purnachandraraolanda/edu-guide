@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Plus, Pencil, Trash2, Search, Building2, MapPin, IndianRupee, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";

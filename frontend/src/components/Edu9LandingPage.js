@@ -258,20 +258,39 @@ const Edu9LandingPage = () => {
                     {college.location}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 mb-4">
-                    <div className="bg-blue-50 p-3 rounded-lg">
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    <div className="bg-blue-50 p-2 rounded-lg">
                       <p className="text-xs text-gray-600 mb-1">COMEDK</p>
-                      <p className="text-lg font-bold text-[#0074D9]">
-                        {college.comedk_fees === 0 ? 'N/A' : formatCurrency(college.comedk_fees).replace('₹', '₹')}
+                      <p className="text-sm font-bold text-[#0074D9]">
+                        {college.comedk_fees === 0 ? 'N/A' : formatCurrency(college.comedk_fees)}
                       </p>
                     </div>
-                    <div className="bg-green-50 p-3 rounded-lg">
+                    <div className="bg-green-50 p-2 rounded-lg">
                       <p className="text-xs text-gray-600 mb-1">KCET</p>
-                      <p className="text-lg font-bold text-green-600">
-                        {college.kcet_fees === 0 ? 'N/A' : formatCurrency(college.kcet_fees).replace('₹', '₹')}
+                      <p className="text-sm font-bold text-green-600">
+                        {college.kcet_fees === 0 ? 'N/A' : formatCurrency(college.kcet_fees)}
+                      </p>
+                    </div>
+                    <div className="bg-indigo-50 p-2 rounded-lg">
+                      <p className="text-xs text-gray-600 mb-1">JEE Main</p>
+                      <p className="text-sm font-bold text-indigo-600">
+                        {!college.jee_fees || college.jee_fees === 0 ? 'N/A' : formatCurrency(college.jee_fees)}
+                      </p>
+                    </div>
+                    <div className="bg-orange-50 p-2 rounded-lg">
+                      <p className="text-xs text-gray-600 mb-1">Management</p>
+                      <p className="text-sm font-bold text-orange-600">
+                        {!college.management_fees || college.management_fees === 0 ? 'N/A' : formatCurrency(college.management_fees)}
                       </p>
                     </div>
                   </div>
+
+                  {college.donation && college.donation > 0 && (
+                    <div className="bg-red-50 p-2 rounded-lg mb-4">
+                      <p className="text-xs text-gray-600 mb-1">Donation (One-time)</p>
+                      <p className="text-sm font-bold text-red-600">{formatCurrency(college.donation)}</p>
+                    </div>
+                  )}
 
                   <Button className="w-full bg-[#0074D9] hover:bg-[#001F3F] text-white">
                     View Details

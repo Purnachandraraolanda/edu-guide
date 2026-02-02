@@ -264,7 +264,8 @@ const LandingPage = ({ onNavigateToDashboard }) => {
               {filteredColleges.map((college) => (
                 <Card
                   key={college.id}
-                  className="hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300"
+                  className="hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-300 cursor-pointer group"
+                  onClick={() => handleCollegeClick(college)}
                   data-testid="landing-college-card"
                 >
                   <CardHeader>

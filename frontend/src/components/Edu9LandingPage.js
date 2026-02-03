@@ -123,10 +123,10 @@ const Edu9LandingPage = () => {
               className="h-24 w-24 rounded-full mx-auto mb-6 border-4 border-white shadow-2xl"
             />
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Secure Your Engineering Future with Confidence
+              Get Admitted to Top Bangalore Engineering Colleges
             </h1>
             <p className="text-2xl mb-4 text-blue-100">
-              100s of successful admissions | Your journey to top engineering colleges starts here
+              500+ successful placements in premier colleges | Expert guidance for COMEDK, KCET & Management admissions
             </p>
             <Button 
               size="lg" 

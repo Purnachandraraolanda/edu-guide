@@ -420,7 +420,7 @@ const Edu9LandingPage = () => {
                 <Button 
                   size="lg"
                   className="bg-[#FFD700] text-[#001F3F] hover:bg-yellow-500 px-12 py-6 text-lg font-bold"
-                  onClick={() => setShowEnquiryForm(true)}
+                  onClick={() => navigate('/payment-structure')}
                 >
                   Click to view details →
                 </Button>

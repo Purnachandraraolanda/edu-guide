@@ -537,6 +537,48 @@ const Dashboard = ({ onNavigateToLanding }) => {
                 </div>
               </div>
 
+              <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="jee_fees">JEE Main Annual Fees (₹)</Label>
+                  <Input
+                    id="jee_fees"
+                    type="number"
+                    value={formData.jee_fees}
+                    onChange={(e) =>
+                      setFormData({ ...formData, jee_fees: e.target.value })
+                    }
+                    placeholder="e.g., 250000"
+                  />
+                </div>
+
+                <div className="grid gap-2">
+                  <Label htmlFor="management_fees">Management Quota Fees (₹)</Label>
+                  <Input
+                    id="management_fees"
+                    type="number"
+                    value={formData.management_fees}
+                    onChange={(e) =>
+                      setFormData({ ...formData, management_fees: e.target.value })
+                    }
+                    placeholder="e.g., 500000"
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-2">
+                <Label htmlFor="donation">Donation Amount (₹) - One-time</Label>
+                <Input
+                  id="donation"
+                  type="number"
+                  value={formData.donation}
+                  onChange={(e) =>
+                    setFormData({ ...formData, donation: e.target.value })
+                  }
+                  placeholder="e.g., 2000000"
+                />
+                <p className="text-xs text-gray-500">Enter 0 for government/aided colleges or if no donation required</p>
+              </div>
+
               <div className="grid gap-2">
                 <Label>Admission Type *</Label>
                 <Select

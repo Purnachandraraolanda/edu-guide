@@ -139,15 +139,15 @@ const Edu9LandingPage = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6">
-                <div className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-2">{colleges.length}+</div>
-                <div className="text-lg">Top Colleges</div>
+                <div className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-2">500+</div>
+                <div className="text-lg">Successful Admissions</div>
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6">
-                <div className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-2">50+</div>
-                <div className="text-lg">Partner Institutions</div>
+                <div className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-2">{colleges.length}</div>
+                <div className="text-lg">Partner Colleges</div>
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6">
-                <div className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-2">10+</div>
+                <div className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-2">15+</div>
                 <div className="text-lg">Years Experience</div>
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6">

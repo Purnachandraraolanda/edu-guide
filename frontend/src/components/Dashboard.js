@@ -136,6 +136,9 @@ const Dashboard = ({ onNavigateToLanding }) => {
         ...formData,
         comedk_fees: parseFloat(formData.comedk_fees),
         kcet_fees: parseFloat(formData.kcet_fees),
+        jee_fees: formData.jee_fees ? parseFloat(formData.jee_fees) : null,
+        management_fees: formData.management_fees ? parseFloat(formData.management_fees) : null,
+        donation: formData.donation ? parseFloat(formData.donation) : null,
         established_year: formData.established_year
           ? parseInt(formData.established_year)
           : null,

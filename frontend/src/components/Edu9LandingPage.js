@@ -415,13 +415,16 @@ const Edu9LandingPage = () => {
                 ))}
               </div>
 
-              <Button 
-                size="lg"
-                className="bg-[#FFD700] text-[#001F3F] hover:bg-yellow-500 px-12 py-6 text-lg font-bold"
-                onClick={() => setShowEnquiryForm(true)}
-              >
-                Stage-wise payment structure →
-              </Button>
+              <div className="text-center">
+                <p className="text-white text-lg mb-2">Stage-wise payment structure</p>
+                <Button 
+                  size="lg"
+                  className="bg-[#FFD700] text-[#001F3F] hover:bg-yellow-500 px-12 py-6 text-lg font-bold"
+                  onClick={() => setShowEnquiryForm(true)}
+                >
+                  Click to view details →
+                </Button>
+              </div>
             </div>
           </div>
         </div>

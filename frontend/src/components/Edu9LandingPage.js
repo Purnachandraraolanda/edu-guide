@@ -465,26 +465,62 @@ const Edu9LandingPage = () => {
       {/* Footer */}
       <footer className="bg-[#001F3F] text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <img 
-                src="/edu9-logo.jpg" 
-                alt="Edu9 Career Guidance" 
-                className="h-16 w-16 rounded-full"
-              />
-              <div>
-                <h3 className="text-2xl font-bold">Edu9 Career Guidance</h3>
-                <p className="text-blue-200">Engineering College Admissions Portal</p>
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {/* Company Info */}
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <img 
+                  src="/edu9-logo.jpg" 
+                  alt="Edu9 Career Guidance" 
+                  className="h-20 w-20 rounded-full"
+                />
+                <div>
+                  <h3 className="text-2xl font-bold">Edu9 Career Guidance</h3>
+                  <p className="text-blue-200">Engineering College Admissions Portal</p>
+                </div>
+              </div>
+              <p className="text-blue-200 mb-4">
+                Expert guidance for COMEDK, KCET, JEE Main, and Management quota admissions in top Bangalore engineering colleges.
+              </p>
+              <div className="space-y-2 text-blue-200">
+                <p className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  Hyderabad, Telangana, India
+                </p>
+                <p className="flex items-center gap-2">
+                  <Users className="h-4 w-4" />
+                  500+ Successful Admissions
+                </p>
+                <p className="flex items-center gap-2">
+                  <Award className="h-4 w-4" />
+                  15+ Years Experience
+                </p>
               </div>
             </div>
-            <div className="text-center md:text-right">
-              <p className="text-blue-200 mb-2">
-                Helping students make informed decisions about their engineering education
-              </p>
-              <p className="text-sm text-blue-300">
-                © 2026 Edu9 Career Guidance. All rights reserved.
-              </p>
+
+            {/* Google Maps */}
+            <div>
+              <h4 className="text-xl font-bold mb-4">Visit Our Office</h4>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.529363622335!2d78.44231507516596!3d17.434359483460852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9160af7ddf1b%3A0xd324b68f71027183!2sEdu9%20Career%20Guidance%20%7C%20B.Tech%2C%20Diploma%2C%20MBA%2C%20B.Sc.Agriculture%2C%20B.V.SC%20%26%20A.H%2C%20MBBS%20Colleges%20Best%20Career%20Guidance!5e0!3m2!1sen!2sin!4v1770117807664!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="300" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Edu9 Career Guidance Location"
+                ></iframe>
+              </div>
             </div>
+          </div>
+
+          {/* Bottom Footer */}
+          <div className="border-t border-blue-800 pt-6 text-center">
+            <p className="text-blue-300">
+              © 2026 Edu9 Career Guidance. All rights reserved. | Bangalore Engineering College Admissions
+            </p>
           </div>
         </div>
       </footer>

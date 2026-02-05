@@ -130,7 +130,8 @@ const Edu9LandingPage = () => {
             </p>
             <button 
               type="button" 
-              class="npfWidgetButton npfWidget-48d9c2a459354029d770de776442581e bg-[#FFD700] text-[#001F3F] hover:bg-yellow-500 text-lg px-12 py-6 rounded-full font-bold shadow-lg cursor-pointer transition-colors"
+              className="npfWidgetButton npfWidget-48d9c2a459354029d770de776442581e bg-[#FFD700] text-[#001F3F] hover:bg-yellow-500 text-lg px-12 py-6 rounded-full font-bold shadow-lg cursor-pointer transition-colors"
+              onClick={() => setShowEnquiryForm(true)}
             >
               Enquire Now!
             </button>

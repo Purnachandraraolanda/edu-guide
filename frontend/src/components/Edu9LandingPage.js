@@ -376,33 +376,41 @@ const Edu9LandingPage = () => {
             </p>
           </div>
 
-          {/* Videos Grid */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {[
-              { id: 'TNh4aaiCrec', title: 'COMEDK Engineering College Admissions Guide' },
-              { id: 'qdWpI8nlhmE', title: 'KCET Counselling Process Explained' },
-              { id: 'uGizA4hbIkM', title: 'Top Bangalore Engineering Colleges 2026' },
-              { id: 'QFHpY8Q9h00', title: 'Management Quota Admissions - Complete Guide' }
-            ].map((video, idx) => (
-              <Card key={idx} className="overflow-hidden border-2 hover:border-[#0074D9] hover:shadow-xl transition-all">
-                <div className="aspect-video">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="rounded-t-lg"
-                  ></iframe>
-                </div>
-                <CardContent className="p-4 bg-white">
-                  <h4 className="font-semibold text-[#001F3F] mb-2">{video.title}</h4>
-                  <p className="text-sm text-gray-600">Edu9 Career Guidance</p>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Horizontal Scrolling Videos */}
+          <div className="relative">
+            <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-[#0074D9] scrollbar-track-gray-200">
+              {[
+                { id: 'TNh4aaiCrec', title: 'COMEDK Engineering College Admissions Guide' },
+                { id: 'qdWpI8nlhmE', title: 'KCET Counselling Process Explained' },
+                { id: 'uGizA4hbIkM', title: 'Top Bangalore Engineering Colleges 2026' },
+                { id: 'QFHpY8Q9h00', title: 'Management Quota Admissions - Complete Guide' }
+              ].map((video, idx) => (
+                <Card 
+                  key={idx} 
+                  className="flex-shrink-0 w-[450px] snap-start overflow-hidden border-2 hover:border-[#0074D9] hover:shadow-xl transition-all"
+                >
+                  <div className="aspect-video">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="rounded-t-lg"
+                    ></iframe>
+                  </div>
+                  <CardContent className="p-4 bg-white">
+                    <h4 className="font-semibold text-[#001F3F] mb-2">{video.title}</h4>
+                    <p className="text-sm text-gray-600">Edu9 Career Guidance</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              👉 Scroll horizontally to view all videos
+            </p>
           </div>
         </div>
       </section>

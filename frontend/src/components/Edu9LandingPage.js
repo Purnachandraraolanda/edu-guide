@@ -122,8 +122,8 @@ const Edu9LandingPage = () => {
               alt="Edu9 Career Guidance" 
               className="h-24 w-24 rounded-full mx-auto mb-6 border-4 border-white shadow-2xl"
             />
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Get Admitted to Top Bangalore Engineering Colleges
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+ Get Admitted to Top Bangalore Engineering Colleges
             </h1>
             <p className="text-2xl mb-4 text-blue-100">
               500+ successful placements in premier colleges | Expert guidance for COMEDK, KCET & Management admissions
@@ -357,32 +357,52 @@ const Edu9LandingPage = () => {
       {/* Video Section */}
       <section className="py-20 bg-[#F0F8FF]">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-4 mb-8">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-6">
               <img 
                 src="/edu9-logo.jpg" 
                 alt="Edu9 Career Guidance" 
                 className="h-16 w-16 rounded-full"
               />
-              <div>
+              <div className="text-left">
                 <h3 className="text-3xl font-bold text-[#001F3F]">Edu9 Career Guidance</h3>
                 <p className="text-gray-600">346K subscribers</p>
               </div>
             </div>
 
             <h2 className="text-4xl font-bold text-[#001F3F] mb-4">Watch & Learn</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Discover everything about engineering admissions through our informative video guides.
+            <p className="text-xl text-gray-600">
+              Discover everything about engineering admissions through our informative video guides
             </p>
+          </div>
 
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="aspect-video bg-gradient-to-br from-[#001F3F] to-[#0074D9] rounded-lg flex items-center justify-center">
-                <div className="text-center text-white">
-                  <Play className="h-20 w-20 mx-auto mb-4" />
-                  <p className="text-xl">Video content coming soon</p>
+          {/* Videos Grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {[
+              { id: 'TNh4aaiCrec', title: 'COMEDK Engineering College Admissions Guide' },
+              { id: 'qdWpI8nlhmE', title: 'KCET Counselling Process Explained' },
+              { id: 'uGizA4hbIkM', title: 'Top Bangalore Engineering Colleges 2026' },
+              { id: 'QFHpY8Q9h00', title: 'Management Quota Admissions - Complete Guide' }
+            ].map((video, idx) => (
+              <Card key={idx} className="overflow-hidden border-2 hover:border-[#0074D9] hover:shadow-xl transition-all">
+                <div className="aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded-t-lg"
+                  ></iframe>
                 </div>
-              </div>
-            </div>
+                <CardContent className="p-4 bg-white">
+                  <h4 className="font-semibold text-[#001F3F] mb-2">{video.title}</h4>
+                  <p className="text-sm text-gray-600">Edu9 Career Guidance</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

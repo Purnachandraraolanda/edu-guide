@@ -120,7 +120,7 @@ const Edu9LandingPage = () => {
             <img 
               src="/edu9-logo.jpg" 
               alt="Edu9 Career Guidance" 
-              className="h-24 w-24 rounded-full mx-0 mb-6 border-4 border-white shadow-2xl"
+              className="h-24 w-24 rounded-full mx-auto mb-6 border-4 border-white shadow-2xl"
             />
             <h1 className="text-2xl md:text-2xl font-bold mb-6 leading-tight text-left">
  Get Admitted to Top Bangalore Engineering Colleges
@@ -128,14 +128,21 @@ const Edu9LandingPage = () => {
             <p className="text-1xl mb-4 text-blue-100 text-left">
               500+ successful placements in premier colleges | Expert guidance for COMEDK, KCET & Management admissions
             </p>
-            <button 
-              type="button" 
-              className="npfWidgetButton npfWidget-48d9c2a459354029d770de776442581e bg-[#FFD700] text-[#001F3F] hover:bg-yellow-500 text-lg px-12 py-6 rounded-full font-bold shadow-lg cursor-pointer transition-colors"
-              onClick={() => setShowEnquiryForm(true)}
-            >
-              Enquire Now!
-            </button>
-  <div className="npf_wgts" data-height="400px" data-w="48d9c2a459354029d770de776442581e"></div>
+            
+            {/* Form Header */}
+              <div className="bg-[#0055A5] px-6 py-4">
+                <h3 className="text-white text-xl font-bold text-center">Enquiry Form</h3>
+                <p className="text-white/80 text-sm text-center mt-1">Start your Engineering journey today</p>
+              </div>
+              {/* Meritto Form Widget */}
+              <div className="p-1">
+                <div 
+                  className="npf_wgts" 
+                  data-height="400px" 
+                  data-w="48d9c2a459354029d770de776442581e"
+                ></div>
+              </div>
+  
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
@@ -384,7 +391,11 @@ const Edu9LandingPage = () => {
                 { id: 'TNh4aaiCrec', title: 'COMEDK Engineering College Admissions Guide' },
                 { id: 'qdWpI8nlhmE', title: 'KCET Counselling Process Explained' },
                 { id: 'uGizA4hbIkM', title: 'Top Bangalore Engineering Colleges 2026' },
-                { id: 'QFHpY8Q9h00', title: 'Management Quota Admissions - Complete Guide' }
+                { id: 'QFHpY8Q9h00', title: 'Management Quota Admissions - Complete Guide' },
+                { id: '9BHSwtwWTg4', title: 'COMEDK exam 2026 90 days master plan'},
+                { id: 'QPsqHv7_-Ds', title: 'top 10 comedk engineering colleges'},
+                { id: 'yKisD6-Gx1M', title: 'pes university campus live tour'},
+                { id: '7UHzwcjpvj8', title: 'garden city university live tour'}
               ].map((video, idx) => (
                 <Card 
                   key={idx} 

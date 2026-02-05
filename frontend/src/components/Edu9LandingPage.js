@@ -120,21 +120,22 @@ const Edu9LandingPage = () => {
             <img 
               src="/edu9-logo.jpg" 
               alt="Edu9 Career Guidance" 
-              className="h-24 w-24 rounded-full mx-auto mb-6 border-4 border-white shadow-2xl"
+              className="h-24 w-24 rounded-full mx-0 mb-6 border-4 border-white shadow-2xl"
             />
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+            <h1 className="text-2xl md:text-2xl font-bold mb-6 leading-tight text-left">
  Get Admitted to Top Bangalore Engineering Colleges
             </h1>
-            <p className="text-2xl mb-4 text-blue-100">
+            <p className="text-1xl mb-4 text-blue-100 text-left">
               500+ successful placements in premier colleges | Expert guidance for COMEDK, KCET & Management admissions
             </p>
             <Button 
-              size="lg" 
-              className="bg-[#FFD700] text-[#001F3F] hover:bg-yellow-500 text-lg px-12 py-6 rounded-full font-bold shadow-lg"
-              onClick={() => setShowEnquiryForm(true)}
-            >
-              Book Career Counseling
-            </Button>
+    size="lg" 
+    className="bg-[#FFD700] text-[#001F3F] hover:bg-yellow-500 text-lg px-12 py-6 rounded-full font-bold shadow-lg"
+    onClick={() => setShowEnquiryForm(true)}
+  >
+    Book Career Counseling
+  </Button>
+  <div class="npf_wgts" data-height="400px" data-w="48d9c2a459354029d770de776442581e"></div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">

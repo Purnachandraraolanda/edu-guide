@@ -135,7 +135,7 @@ const Edu9LandingPage = () => {
             >
               Enquire Now!
             </button>
-  <div class="npf_wgts" data-height="400px" data-w="48d9c2a459354029d770de776442581e"></div>
+  <div className="npf_wgts" data-height="400px" data-w="48d9c2a459354029d770de776442581e"></div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">

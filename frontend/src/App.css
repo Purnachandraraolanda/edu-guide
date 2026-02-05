@@ -14,6 +14,31 @@
   color: #61dafb;
 }
 
+/* Custom scrollbar for horizontal video scroll */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #0074D9;
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #001F3F;
+}
+
+/* Smooth scrolling */
+.overflow-x-auto {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

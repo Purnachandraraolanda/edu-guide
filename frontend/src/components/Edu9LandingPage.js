@@ -99,9 +99,18 @@ const Edu9LandingPage = () => {
             <span className="text-xl font-bold">Edu9 Career Guidance</span>
           </div>
           <div className="hidden md:flex items-center gap-6">
-            <a href="#home" className="hover:text-[#0074D9] transition-colors">Home</a>
-            <a href="#services" className="hover:text-[#0074D9] transition-colors">Services</a>
-            <a href="#colleges" className="hover:text-[#0074D9] transition-colors">Colleges</a>
+            <a href="/#home" className="hover:text-[#0074D9] transition-colors">Home</a>
+            <a href="/#services" className="hover:text-[#0074D9] transition-colors">Services</a>
+            <a href="/#colleges" className="hover:text-[#0074D9] transition-colors">Colleges</a>
+            <a href="/#contact" className="hover:text-[#0074D9] transition-colors">Contact</a>
+            <a 
+              href="https://bookings.edu9.in/#/2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#0074D9] text-white px-5 py-2 rounded-full font-bold hover:bg-[#FFD700] hover:text-[#001F3F] transition-colors"
+            >
+              Book Career Counselling
+            </a>
             <Button 
               onClick={() => navigate('/dashboard')}
               variant="outline"

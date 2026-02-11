@@ -516,7 +516,7 @@ const Edu9LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#001F3F] text-white py-12">
+      <footer id="contact" className="bg-[#001F3F] text-white py-12 scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Company Info */}

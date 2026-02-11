@@ -123,7 +123,7 @@ const Edu9LandingPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative bg-gradient-to-br from-[#001F3F] via-[#0074D9] to-[#001F3F] text-white py-24">
+      <section id="home" className="relative bg-gradient-to-br from-[#001F3F] via-[#0074D9] to-[#001F3F] text-white py-24 scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
             <img 

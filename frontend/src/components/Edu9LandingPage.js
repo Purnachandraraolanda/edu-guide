@@ -177,7 +177,7 @@ const Edu9LandingPage = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50 scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-sm text-[#0074D9] font-semibold mb-2 uppercase">Our Services</h2>

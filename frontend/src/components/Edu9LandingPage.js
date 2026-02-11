@@ -99,6 +99,8 @@ const Edu9LandingPage = () => {
             />
             <span className="text-xl font-bold">Edu9 Career Guidance</span>
           </div>
+          
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
             <a href="/#home" className="hover:text-[#0074D9] transition-colors">Home</a>
             <a href="/#services" className="hover:text-[#0074D9] transition-colors">Services</a>
@@ -120,7 +122,49 @@ const Edu9LandingPage = () => {
               Dashboard
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-[#001F3F] border-t border-blue-800">
+            <div className="container mx-auto px-4 py-4 space-y-3">
+              <a href="/#home" className="block hover:text-[#0074D9] transition-colors" onClick={() => setMobileMenuOpen(false)}>Home</a>
+              <a href="/#services" className="block hover:text-[#0074D9] transition-colors" onClick={() => setMobileMenuOpen(false)}>Services</a>
+              <a href="/#colleges" className="block hover:text-[#0074D9] transition-colors" onClick={() => setMobileMenuOpen(false)}>Colleges</a>
+              <a href="/#contact" className="block hover:text-[#0074D9] transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+              <a 
+                href="https://bookings.edu9.in/#/2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-[#0074D9] text-white px-5 py-2 rounded-full font-bold text-center hover:bg-[#FFD700] hover:text-[#001F3F] transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Book Career Counselling
+              </a>
+              <Button 
+                onClick={() => { navigate('/dashboard'); setMobileMenuOpen(false); }}
+                variant="outline"
+                className="w-full border-white text-white hover:bg-white hover:text-[#001F3F]"
+              >
+                Dashboard
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}

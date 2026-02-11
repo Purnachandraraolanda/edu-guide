@@ -30,6 +30,7 @@ const Edu9LandingPage = () => {
   const [filteredColleges, setFilteredColleges] = useState([]);
   const [selectedType, setSelectedType] = useState('all');
   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     fetchColleges();

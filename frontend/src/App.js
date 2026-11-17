@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 import "@/App.css";
 import { MapPin, GraduationCap, Building2, Train, ExternalLink, Menu, X, MessageSquare, CheckCircle, Users, Settings, Play, Phone, Mail, Youtube, CreditCard, Shield, Sparkles, ArrowLeft, FileText, AlertCircle } from "lucide-react";
@@ -188,6 +188,8 @@ const Navbar = () => {
           
           <Link to="/payment-structure" className="nav-link" data-testid="nav-payment">Payment Structure</Link>
            <a href="/#contact" className="nav-link" data-testid="nav-contact">Contact</a>
+          
+           
         </div>
          
 
@@ -844,6 +846,8 @@ const Footer = () => (
             <li><a href="#">FTO Partners</a></li>
             <li><a href="#">Success Stories</a></li>
             <li><a href="#">Blog</a></li>
+            {/* Add the Privacy Policy link here */}
+    
           </ul>
         </div>
         
@@ -902,8 +906,14 @@ const Footer = () => (
         <p className="footer-copyright">
           © 2026 Edu9 Career Guidance. All information is for educational purposes.
         </p>
+        {/* This is your new link */}
+    <Link to="/privacy-policy" className="text-white/70 hover:text-[#FFD700] text-sm transition-colors">
+      Privacy Policy
+    </Link>
       </div>
     </div>
+    
+    
   </footer>
 );
 
@@ -1124,6 +1134,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/payment-structure" element={<PaymentStructurePage />} />
+          
         </Routes>
       </div>
     </BrowserRouter>
